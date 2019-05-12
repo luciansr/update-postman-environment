@@ -15,4 +15,4 @@
 
  ## where to create a new api key:
 
- `https://web.postman.co/integrations/services/pm_pro_api/configured`
+ https://web.postman.co/integrations/services/pm_pro_api/configured
