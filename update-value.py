@@ -22,6 +22,7 @@ def updateValueOnEnvironment(apiKey, key, value):
                 action = 'updated'
                 for item in values:
                     if item['key'] == key:
+                        index = i
                         values.pop(i)
                         break
                     i = i + 1
