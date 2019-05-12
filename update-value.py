@@ -1,5 +1,6 @@
 import requests
 import json
+import sys
 
 def updateValueOnEnvironment(apiKey, key, value):
     environmentData = requests.get('https://api.getpostman.com/environments', headers={"X-API-Key":apiKey})
@@ -39,3 +40,5 @@ def updateValueOnEnvironment(apiKey, key, value):
 
                 if(putResponse.ok):
                     print('updated environment' + fullEnvironment['name'] + ': ' + action + ' key ' + key + ' with value ' + value)
+
+updateValueOnEnvironment(sys.argv[1], sys.argv[2], sys.argv[3])
