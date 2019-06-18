@@ -9,6 +9,12 @@ def updateValueOnEnvironment(apiKey, key, value):
         environments = environmentData.json()['environments']
         for environment in environments: 
             environmentId = environment['id']
+            environmentName = environment['name']
+
+            if (not environmentName.startswith('>')):
+                print('Skipping environment [' + environmentName + '] because it does not starts with ">" 👻')
+                continue
+
             environmentUrl = 'https://api.getpostman.com/environments/' + environmentId
             singleEnvData = requests.get(environmentUrl, headers={"X-API-Key":apiKey})
 
